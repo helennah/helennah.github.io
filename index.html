@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Helennah Tran | BIOL 101</title>
+  <!-- External CSS file linked here (NOT inline styles, as required) -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ================================================
+       REQUIREMENT 2: Navigation with logo + 2 menu items
+       ================================================ -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a class="nav-logo" href="index.html">
+        <span class="logo-mark">🔬</span>
+        <span class="logo-name">Helennah Tran</span>
+      </a>
+
+      <!-- At least 2 menu items required -->
+      <ul class="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio" class="nav-highlight">Portfolio</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- ================================================
+       REQUIREMENT 1: Picture + Header + Short Bio
+       ================================================ -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+
+      <!-- Profile photo: replace src with your actual image file path -->
+      <div class="photo-wrapper">
+        <img
+          class="profile-photo"
+          src="img/profile.jpg"
+          alt="Photo of Your Name"
+          width="280"
+          height="280"
+        />
+        <!-- This placeholder shows if photo file is missing -->
+        <div class="photo-placeholder">
+          <p>📷<br>Add your photo to<br><code>img/profile.jpg</code></p>
+        </div>
+      </div>
+
+      <!-- Header + Bio -->
+      <div class="bio-text">
+        <p class="bio-greeting">Hello, I'm</p>
+        <h1 class="bio-name">Helennah Tran</h1>
+        <h2 class="bio-subtitle">Biology Student · Uniersity of California, Riverside</h2>
+
+        <p class="bio-body">
+          I'm an undergraduate student majoring in Biology at University of California, Riverside.
+          I am currently enrolled in <em>BIOL 101: Computational and Data
+          Skills for Everyday Biology</em>, where I'm building skills in
+          data analysis, visualization, and scientific communication using R.
+        </p>
+        <p class="bio-body">
+          Outside of class I enjoy doing pilates, pottery, and trying new food places! Explore my
+          portfolio below to see projects I've completed this quarter!
+        </p>
+
+        <a class="cta-button" href="#portfolio">View My Portfolio ↓</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       REQUIREMENT 3: Portfolio section with class project link
+       ================================================ -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="portfolio-container">
+
+      <h2 class="section-heading">Portfolio</h2>
+      <p class="section-sub">Work from my coursework at University of California, Riverside.</p>
+
+      <div class="project-grid">
+
+        <!-- CARD 1: Update the href to link to your actual HTML project file -->
+        <article class="project-card">
+          <span class="card-tag">BIOL 101</span>
+          <h3 class="card-title">Unit 2 Project</h3>
+          <p class="card-desc">
+            Describe your project here in 2–3 sentences. What data did
+            you analyze? What did you find? What R tools did you use?
+          </p>
+          <!-- Update this link to point to your class project HTML file -->
+          <a class="card-link" href="projects/Unit-02-Project.html">View Project →</a>
+        </article>
+
+        <!-- CARD 2: Optional second project -->
+        <article class="project-card">
+          <span class="card-tag">Lab Report</span>
+          <h3 class="card-title">Unit 3 Project</h3>
+          <p class="card-desc">
+            Add any other work you want to showcase — a lab report,
+            an analysis, a paper, or another class project.
+          </p>
+          <a class="card-link" href="projects/Unit-Project-03.html">View Project →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <p>© 2026 Your Name &nbsp;·&nbsp; BIOL 101 Final Project &nbsp;·&nbsp; Hosted on GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
