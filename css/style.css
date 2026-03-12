@@ -1,0 +1,328 @@
+/* ===========================================
+   style.css — Helennah Tran Personal Webpage
+   BIOL 101 Final Project
+   =========================================== */
+
+:root {
+  --lavender:     #c3a8d1;
+  --purple:       #8b5fa3;
+  --purple-dark:  #5c3573;
+  --purple-pale:  #f5f0fa;
+  --purple-light: #ede4f5;
+  --mauve:        #9b72b0;
+  --white:        #ffffff;
+  --text:         #1e1228;
+  --text-mid:     #4a3060;
+  --text-light:   #9070a8;
+  --cream:        #fdfaff;
+  --shadow:       0 6px 30px rgba(120, 60, 160, 0.10);
+  --radius:       16px;
+  --font-head:    'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Jost', 'Helvetica Neue', sans-serif;
+  --max-width:    1060px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--cream);
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ── NAVIGATION ── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--white);
+  border-bottom: 2px solid var(--purple-light);
+  box-shadow: 0 2px 16px rgba(120, 60, 160, 0.07);
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  color: var(--purple-dark);
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+.nav-logo:hover { opacity: 0.75; }
+.logo-mark { font-size: 1.3rem; }
+
+.nav-menu { display: flex; gap: 2rem; }
+.nav-menu a {
+  color: var(--text-mid);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-menu a:hover { color: var(--purple); border-bottom-color: var(--lavender); }
+.nav-menu a.nav-highlight { color: var(--purple); }
+.nav-menu a.nav-highlight:hover { border-bottom-color: var(--purple); }
+
+/* ── ABOUT SECTION ── */
+.about-section {
+  padding: 5rem 2rem 4.5rem;
+  background: linear-gradient(150deg, var(--cream) 50%, var(--purple-light) 100%);
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: "✦";
+  position: absolute;
+  font-size: 22rem;
+  opacity: 0.03;
+  top: -4rem;
+  right: -2rem;
+  pointer-events: none;
+  color: var(--purple);
+}
+
+.about-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4.5rem;
+  flex-wrap: wrap;
+}
+
+/* Profile photo */
+.photo-wrapper { position: relative; flex-shrink: 0; }
+
+.profile-photo {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--lavender);
+  box-shadow: 0 8px 32px rgba(120, 60, 160, 0.18);
+  display: block;
+}
+
+.photo-placeholder {
+  display: none;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 4px dashed var(--lavender);
+  background-color: var(--purple-light);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--mauve);
+  padding: 1.5rem;
+  line-height: 1.6;
+}
+.profile-photo:not([src]) ~ .photo-placeholder,
+.profile-photo[src=""] ~ .photo-placeholder { display: flex; }
+.photo-placeholder code {
+  font-size: 0.78rem;
+  background: #dcc8ec;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+/* Bio text */
+.bio-text { flex: 1; min-width: 280px; }
+
+.bio-greeting {
+  font-size: 0.9rem;
+  color: var(--mauve);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.bio-name {
+  font-family: var(--font-head);
+  font-size: 3.4rem;
+  line-height: 1.1;
+  color: var(--purple-dark);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.bio-subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-light);
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.03em;
+}
+
+.bio-body {
+  font-size: 1rem;
+  color: var(--text-mid);
+  max-width: 520px;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+.bio-body em { font-style: italic; color: var(--text); }
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, var(--lavender), var(--purple));
+  color: var(--white);
+  padding: 0.8rem 2.2rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(120, 60, 160, 0.30);
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(120, 60, 160, 0.40);
+}
+
+/* ── PORTFOLIO SECTION ── */
+.portfolio-section {
+  padding: 5rem 2rem;
+  background-color: var(--white);
+  position: relative;
+}
+
+.portfolio-section::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, var(--lavender), var(--purple), var(--lavender));
+}
+
+.portfolio-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+.section-heading {
+  font-family: var(--font-head);
+  font-size: 2.8rem;
+  color: var(--purple-dark);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.section-sub {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+
+.project-card {
+  background: linear-gradient(160deg, var(--purple-pale), var(--white));
+  border: 1px solid #ddd0ea;
+  border-radius: var(--radius);
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.card-tag {
+  display: inline-block;
+  background-color: var(--purple-light);
+  color: var(--purple);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 0.9rem;
+  align-self: flex-start;
+}
+
+.card-title {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  color: var(--purple-dark);
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+}
+
+.card-desc {
+  font-size: 0.93rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  flex-grow: 1;
+  margin-bottom: 1.4rem;
+  font-weight: 300;
+}
+
+.card-link {
+  color: var(--purple);
+  font-weight: 500;
+  font-size: 0.88rem;
+  border-bottom: 2px solid var(--lavender);
+  padding-bottom: 1px;
+  align-self: flex-start;
+  transition: color 0.2s, border-color 0.2s;
+}
+.card-link:hover { color: var(--purple-dark); border-bottom-color: var(--purple); }
+
+/* ── FOOTER ── */
+.site-footer {
+  background: linear-gradient(135deg, var(--purple-dark), var(--mauve));
+  color: #e8d8f5;
+  text-align: center;
+  padding: 1.8rem 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  font-weight: 300;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  .about-container { flex-direction: column; text-align: center; gap: 2rem; }
+  .bio-name { font-size: 2.5rem; }
+  .bio-body { margin-left: auto; margin-right: auto; }
+  .profile-photo, .photo-placeholder { width: 210px; height: 210px; }
+  .section-heading { font-size: 2.2rem; }
+}
